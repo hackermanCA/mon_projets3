@@ -32,20 +32,25 @@
 
     <script>
         function handleLogin(event) {
-            event.preventDefault();
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-            // Exemple simple de validation
-            if (username === "crelmi" && password === "198500") {
-                localStorage.setItem("isLoggedIn", true);
-                window.location.href = "index.html"; // Redirection après connexion
-            } else {
-                alert("Nom d'utilisateur ou mot de passe incorrect.");
-            }
-        }
+    // Exemple simple de validation
+    if (username === "crelmi" && password === "198500") {
+        localStorage.setItem("isLoggedIn", true);
+        
+        // Redirection compatible sur téléphone et ordinateur
+        window.location.replace("index.html"); 
+    } else {
+        alert("Nom d'utilisateur ou mot de passe incorrect.");
+    }
+}
+        
     </script>
+
 
 </body>
 
 </html>
+
