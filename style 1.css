@@ -132,6 +132,39 @@ nav ul li a {
     color: #0c8330;
 }
 
+/* Styles pour le lien et le bouton WhatsApp */
+a {
+    text-decoration: none;
+    color: #25D366; /* Couleur de WhatsApp */
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+a:hover {
+    color: #128C7E; /* Couleur au survol */
+    text-decoration: underline;
+}
+
+/* Styles pour le bouton WhatsApp */
+button {
+    background-color: #25D366; /* Couleur de fond de WhatsApp */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #128C7E; /* Couleur de fond au survol */
+}
+
 footer {
     background: #34a853;
     color: #fff;
