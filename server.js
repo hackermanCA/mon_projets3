@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-const port = 4000; // Changement du port 3000 → 4000
+const port = 5000; // Changement du port 3000 → 4000
 
 // Middleware pour servir les fichiers statiques (HTML, CSS, JS)
 app.use(express.static('public'));
 
 // Route principale
 app.get('/', (req, res) => {
-    res.send('Serveur fonctionne bien sur le port 4000 !');
+    res.send('Serveur fonctionne bien sur le port 5000 !');
 });
 
 // Route pour rediriger vers WhatsApp
