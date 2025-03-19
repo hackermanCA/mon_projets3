@@ -12,9 +12,9 @@ app.get('/api/hello', (req, res) => {
 
 // Nouvelle route pour rediriger vers WhatsApp
 app.get('/contact-whatsapp', (req, res) => {
-  const whatsappNumber = '243976443487'; // Remplacez par votre numéro WhatsApp au format international
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
-  res.redirect(whatsappLink);
+    const whatsappNumber = '243976443487'; // Numéro au format international
+    const whatsappLink = `https://wa.me/${whatsappNumber}`;
+    res.redirect(whatsappLink);
 });
 
 app.listen(port, () => {
