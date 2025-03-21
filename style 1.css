@@ -1,5 +1,5 @@
 body {
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -7,6 +7,7 @@ body {
     background: #f9f9f9;
 }
 
+/* === Bannière === */
 .header-banner {
     position: relative;
     width: 100%;
@@ -30,19 +31,11 @@ body {
     border-radius: 10px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
+/* === Navigation === */
 nav {
     background: linear-gradient(to left, #0f9d27, #348da8);
     text-align: center;
-    padding: 0; /* Supprimez le padding pour réduire la hauteur */
+    padding: 5px 0; /* Réduit la hauteur */
 }
 
 nav ul {
@@ -51,20 +44,21 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center; /* Alignez les éléments verticalement */
+    align-items: center;
+    gap: 5px; /* Réduit l’espace entre les éléments */
 }
 
 nav ul li {
-    margin: 0 5px; /* Réduisez la marge pour réduire l'espace entre les éléments */
+    margin: 0 3px; /* Réduit l’espace entre les éléments */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 2px 5px; /* Réduisez le padding pour diminuer la hauteur */
-    line-height: 1; /* Ajustez la hauteur de ligne pour réduire la hauteur */
-    border-radius: 5px;
+    padding: 4px 8px; /* Diminue le padding */
+    font-size: 0.85rem; /* Diminue la taille de la police */
+    border-radius: 4px;
     transition: background-color 0.3s;
 }
 
@@ -72,22 +66,7 @@ nav ul li a:hover {
     background-color: #e0e0e0;
 }
 
-/* Media query pour les petits écrans */
-@media (max-width: 600px) {
-    .header-banner img {
-        max-height: 100px; /* Réduisez la hauteur de l'image pour les petits écrans */
-    }
-
-    .header-banner .overlay {
-        padding: 10px; /* Réduisez le padding de l'overlay pour les petits écrans */
-    }
-
-    nav ul li a {
-        padding: 1px 3px; /* Réduisez encore le padding pour les petits écrans */
-        font-size: 0.8rem; /* Réduisez la taille de la police pour les petits écrans */
-    }
-}
-
+/* === Sections === */
 .section {
     padding: 20px;
     text-align: center;
@@ -97,6 +76,7 @@ nav ul li a:hover {
     color: #34a853;
 }
 
+/* === Grille et Cartes === */
 .grid {
     display: flex;
     justify-content: center;
@@ -111,13 +91,22 @@ nav ul li a:hover {
     padding: 20px;
     width: 300px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .card h3 {
     color: #0c8330;
 }
 
-/* Styles pour le lien et le bouton WhatsApp */
+.card img {
+    width: 100%; /* L’image occupe toute la largeur du conteneur */
+    height: auto; /* Garde le ratio de l’image */
+    max-height: 200px; /* Définit une hauteur maximale */
+    object-fit: cover; /* Coupe l’image pour un bon ajustement */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* === Boutons et liens === */
 a {
     text-decoration: none;
     color: #25D366; /* Couleur de WhatsApp */
@@ -132,9 +121,8 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Styles pour le bouton WhatsApp */
 button {
-    background-color: #25D366; /* Couleur de fond de WhatsApp */
+    background-color: #25D366; /* Couleur de WhatsApp */
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -147,13 +135,34 @@ button {
 }
 
 button:hover {
-    background-color: #128C7E; /* Couleur de fond au survol */
+    background-color: #128C7E;
 }
 
+/* === Pied de page === */
 footer {
     background: #34a853;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+}
+
+/* === Responsive : Petits écrans (moins de 600px) === */
+@media (max-width: 600px) {
+    .header-banner img {
+        max-height: 100px; /* Réduit la hauteur de l’image */
+    }
+
+    .header-banner .overlay {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        padding: 3px 6px; /* Encore plus compact sur mobile */
+        font-size: 0.8rem;
+    }
+
+    .card img {
+        max-height: 150px; /* Réduction de l’image des cartes */
+    }
 }
