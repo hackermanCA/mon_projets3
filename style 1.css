@@ -160,23 +160,27 @@ footer {
     /* ✅ Correction pour garder le menu horizontal */
     nav ul {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
+        flex-wrap: nowrap; /* Empêche le retour à la ligne */
+        overflow-x: auto; /* Active le scroll horizontal si besoin */
+        white-space: nowrap; /* Évite la coupure des mots */
         justify-content: flex-start;
-        padding: 5px;
+        padding: 5px 10px;
     }
 
     nav ul li {
-        flex-shrink: 0;
+        flex-shrink: 0; /* Empêche les éléments de se réduire trop */
+        margin: 0 3px; /* Réduit l'espace entre les éléments */
     }
 
     nav ul li a {
-        padding: 3px 6px;
-        font-size: 0.8rem;
+        font-size: 0.8rem; /* Réduit la taille du texte */
+        padding: 5px 8px; /* Ajuste la taille du bouton */
     }
 
+    /* ✅ Correction des images des cartes */
     .card img {
-        max-height: 150px;
+        width: 100%;
+        max-height: 120px; /* Hauteur réduite pour mobile */
+        object-fit: cover;
     }
 }
