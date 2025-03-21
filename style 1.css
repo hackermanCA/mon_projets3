@@ -25,7 +25,7 @@ body  {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(7, 158, 65, 0.5);
     color: white;
     padding: 20px;
     text-align: center;
@@ -70,45 +70,8 @@ nav ul li a {
 }
 
 .section h2 {
-    color: #34a853
+    color: #34a853;
 }
-
-.contact {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-  }
-
-  .contact h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  input, textarea, button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-
-  button {
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #45a049;
-  }
 
 .grid {
     display: flex;
