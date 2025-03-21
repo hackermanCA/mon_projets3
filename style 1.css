@@ -1,13 +1,11 @@
-body  {
-    font-family: arial,sans-serif;
-    line-height:1.6;
-    margin:  0;
+body {
+    font-family: arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
     padding: 0;
     color: #333;
     background: #f9f9f9;
 }
-
-
 
 .header-banner {
     position: relative;
@@ -44,7 +42,7 @@ header p {
 nav {
     background: linear-gradient(to left, #0f9d27, #348da8);
     text-align: center;
-    padding: 0;
+    padding: 0; /* Supprimez le padding pour réduire la hauteur */
 }
 
 nav ul {
@@ -53,39 +51,43 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Alignez les éléments verticalement */
 }
 
-
 nav ul li {
-    margin: 0 5px;
+    margin: 0 5px; /* Réduisez la marge pour réduire l'espace entre les éléments */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 2px 5px;
-    line-height: 1;
+    padding: 2px 5px; /* Réduisez le padding pour diminuer la hauteur */
+    line-height: 1; /* Ajustez la hauteur de ligne pour réduire la hauteur */
     border-radius: 5px;
     transition: background-color 0.3s;
-    
 }
+
 nav ul li a:hover {
     background-color: #e0e0e0;
 }
 
+/* Media query pour les petits écrans */
 @media (max-width: 600px) {
     .header-banner img {
-        max-height: 150px;
+        max-height: 100px; /* Réduisez la hauteur de l'image pour les petits écrans */
+    }
+
+    .header-banner .overlay {
+        padding: 10px; /* Réduisez le padding de l'overlay pour les petits écrans */
     }
 
     nav ul li a {
-        padding: 1px 3px;
-        font-size: 0.9rem;
+        padding: 1px 3px; /* Réduisez encore le padding pour les petits écrans */
+        font-size: 0.8rem; /* Réduisez la taille de la police pour les petits écrans */
     }
-
 }
+
 .section {
     padding: 20px;
     text-align: center;
@@ -102,7 +104,6 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 
-
 .card {
     background: #fff;
     border: 1px solid #ddd;
@@ -111,7 +112,6 @@ nav ul li a:hover {
     width: 300px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 .card h3 {
     color: #0c8330;
