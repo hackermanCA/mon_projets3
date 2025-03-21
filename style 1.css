@@ -35,7 +35,7 @@ body {
 nav {
     background: linear-gradient(to left, #0f9d27, #348da8);
     text-align: center;
-    padding: 5px 0; /* Réduit la hauteur */
+    padding: 5px 0;
 }
 
 nav ul {
@@ -45,19 +45,19 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px; /* Réduit l’espace entre les éléments */
+    gap: 5px;
 }
 
 nav ul li {
-    margin: 0 3px; /* Réduit l’espace entre les éléments */
+    margin: 0 3px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 4px 8px; /* Diminue le padding */
-    font-size: 0.85rem; /* Diminue la taille de la police */
+    padding: 4px 8px;
+    font-size: 0.85rem;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
@@ -99,17 +99,17 @@ nav ul li a:hover {
 }
 
 .card img {
-    width: 100%; /* L’image occupe toute la largeur du conteneur */
-    height: auto; /* Garde le ratio de l’image */
-    max-height: 200px; /* Définit une hauteur maximale */
-    object-fit: cover; /* Coupe l’image pour un bon ajustement */
-    border-radius: 5px; /* Coins arrondis */
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 /* === Boutons et liens === */
 a {
     text-decoration: none;
-    color: #25D366; /* Couleur de WhatsApp */
+    color: #25D366;
     font-size: 18px;
     font-weight: bold;
     display: inline-block;
@@ -117,12 +117,12 @@ a {
 }
 
 a:hover {
-    color: #128C7E; /* Couleur au survol */
+    color: #128C7E;
     text-decoration: underline;
 }
 
 button {
-    background-color: #25D366; /* Couleur de WhatsApp */
+    background-color: #25D366;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -150,19 +150,33 @@ footer {
 /* === Responsive : Petits écrans (moins de 600px) === */
 @media (max-width: 600px) {
     .header-banner img {
-        max-height: 100px; /* Réduit la hauteur de l’image */
+        max-height: 100px;
     }
 
     .header-banner .overlay {
         padding: 10px;
     }
 
+    /* ✅ Correction pour garder le menu horizontal */
+    nav ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        padding: 5px;
+    }
+
+    nav ul li {
+        flex-shrink: 0;
+    }
+
     nav ul li a {
-        padding: 3px 6px; /* Encore plus compact sur mobile */
+        padding: 3px 6px;
         font-size: 0.8rem;
     }
 
     .card img {
-        max-height: 150px; /* Réduction de l’image des cartes */
+        max-height: 150px;
     }
 }
