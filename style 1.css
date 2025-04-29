@@ -21,9 +21,9 @@ body {
 
 .header-banner .overlay {
     position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-40%, -40%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: rgba(1, 8, 4, 0.5);
     color: white;
     padding: 0px;
@@ -159,13 +159,13 @@ footer {
 }
 
 /* === Responsive : Petits écrans (moins de 600px) === */
-@media (max-width: 600px) {
+@media (max-width: 300px) {
     .header-banner img {
         max-height: 100px;
     }
 
     .header-banner .overlay {
-        padding: 10px;
+        padding: 5px;
     }
 
     /* Correction pour garder le menu horizontal */
