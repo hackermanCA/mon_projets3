@@ -130,13 +130,13 @@ footer {
 }
 
 /* === Responsive : Petits écrans (moins de 600px) === */
-@media (max-width: 600px) {
+@media (max-width: 300px) {
     .header-banner img {
         max-height: 100px;
     }
 
     .header-banner .overlay {
-        padding: 10px;
+        padding: 5px;
     }
 
     /* Correction pour garder le menu horizontal */
