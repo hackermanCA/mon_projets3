@@ -8,17 +8,15 @@ body {
 }
 
 header {
-    background: linear-gradient(to left, #7a0f9b, #030e11);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #4d0d81;
     color: white;
-    padding: 2rem;
-    text-align: center;
-}
+ }
 /* === Navigation === */
-nav {
-    background: linear-gradient(to left, #4a0258, #010d11);
-    text-align: center;
-    padding: 5px 0;
-}
+
 
 nav ul {
     margin: 0;
