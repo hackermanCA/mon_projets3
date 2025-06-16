@@ -5,40 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos conseils - Conseils Santé</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <link rel="stylesheet" href="style 1.css">
 </head>
 
 <body>
-    
-   <header class="header-banner">
-      <h1>nos services</h1>
-      <nav>
-         <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" onclick="logout()">Déconnexion</a></li>
-        </ul>
-    </nav>
+     <div class="menu-burger" id="menuBurger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Menu déroulant -->
+        <div class="menu" id="menu">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="services.html">Nos services</a>
+            <a href="#" onclick="logout()">Déconnexion</a>
+        </div>
+
+         <header class="header-banner">
+        <div class="container header-flex">
+            <div class="flex items-center">
+                <h1 class="brand">Nos_services</h1>
+            </div>
+        </div>
     </header>
 
         <!-- Barre de navigation -->
     
 
         <section id="services" class="section">
-            <h2>Nos conseils</h2>
+            <h2>Nos catégories de bien-être</h2>
+            <p>Explorez nos quatre piliers pour une vie équilibrée et saine. Cliquez sur une catégorie pour découvrir des conseils personalisés.</p>
             <div class="grid">
                 <div class="card" onclick="loadConseil('alimentation')">
+                      <div class="category-icon">
+                        <i class="ri-apple-line"></i>
+                    </div>
                     <h3>Alimentation</h3>
-                    <p>Découvrez comment manger équilibré pour une meilleure santé.</p>
+                    <p>Découvrez les aliments qui nourissent votre corps et votre esprit.</p>
                 </div>
                 <div class="card" onclick="loadConseil('exercices')">
+                    <div class="category-icon">
+                        <i class="ri-run-line"></i>
+                    </div>
                     <h3>Exercices</h3>
-                    <p>Adopter une routine sportive adaptée à vos besoins.</p>
+                    <p>activités physiques adaptées à tous les niveaux pour rester en forme.</p>
                 </div>
                 <div class="card" onclick="loadConseil('remedes')">
+                     <div class="category-icon">
+                        <i class="ri-leaf-line"></i>
+                    </div>
                     <h3>Remèdes naturels</h3>
-                    <p>Explorer des solutions naturelles pour les petits maux du quotidien.</p>
+                    <p>Solutions naturelles pour soulager les maux du quotidien.</p>
                 </div>
             </div>
         </section>
@@ -51,7 +71,41 @@
 
         <!-- Pied de page -->
         <footer>
-            <p>&copy; Tous droits réservés 2025</p>
+            <div class="footer-container">
+               <div class="footer-section">
+               <h3>catégories</h3>
+               <ul>
+                <li><a href=""></a>santé</li>
+                <li><a href=""></a>Alimentation</li>
+                <li><a href=""></a>Remèdes</li>
+                <li><a href=""></a>Exercices</li>
+               </ul>
+               </div>
+
+               <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <ul>
+                <li><a href="#about"></a>A propos</li>
+                <li><a href="#contact"></a>Contact</li>
+                <li><a href="privacy">Politique de confidentialité</a></li> 
+                <li><a href="term">Mentions légales</a></li>
+                </ul>
+               </div>
+
+               <div class="footer-section">
+                <h3>suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">F</a>
+                    <a href="#" aria-label="Instagram">I</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                    <a href="#" aria-label="Pinterest">P</a>
+                </div>
+               </div>
+
+               <div class="copyright">
+                &copy; 2025 Bien-être Naturel. Tous droits réservés.
+               </div>
+            </div>
         </footer>
 
     <!-- Script pour afficher les conseils -->
@@ -59,10 +113,113 @@
         function loadConseil(service) {
             let conseils = {
                 "alimentation": `
-                    <h3>Conseils d'Alimentation</h3>
-                    <p>Conseil 1 : Mangez des légumes et des fruits de saison pour bénéficier des vitamines et des minéraux essentiels.<br>
-                    Conseil 2 : Privilégiez les sources de protéines maigres comme le poulet, le poisson, et les légumineuses.<br>
-                    Conseil 3 : Évitez les sucres ajoutés et limitez les aliments transformés.</p>`,
+                    <div>
+        <div>
+            <h3>Nourrissez votre corps intelligemment</h3>
+            <p>Une alimentation équilibrée est la base d'une bonne santé. Voici quelques principes à suivre pour adopter une alimentation saine :</p>
+            <ul>
+                <li>
+                    <div>
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <span>Privilégiez les aliments non transformés et les produits frais</span>
+                </li>
+                <li>
+                    <div>
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <span>Consommez au moins 5 portions de fruits et légumes par jour</span>
+                </li>
+                <li>
+                    <div>
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <span>Limitez votre consommation de sucres ajoutés et de sel</span>
+                </li>
+                <li>
+                    <div>
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <span>Optez pour des graisses saines comme l'huile d'olive, les avocats et les noix</span>
+                </li>
+                <li>
+                    <div>
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <span>Variez les sources de protéines (légumineuses, poissons, volaille)</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="${this.image}" alt="Alimentation saine">
+        </div>
+    </div>
+    <div>
+        <h3>Les superaliments à intégrer dans votre alimentation</h3>
+        <div>
+            <div>
+                <div>
+                    <h4>Graines de chia</h4>
+                    <p>Riches en oméga-3, fibres et protéines. Idéales dans les smoothies ou yaourts.</p>
+                </div>
+                <div>
+                    <h4>Curcuma</h4>
+                    <p>Puissant anti-inflammatoire et antioxydant. À ajouter dans vos plats ou en infusion.</p>
+                </div>
+                <div>
+                    <h4>Chou kale</h4>
+                    <p>Concentré de vitamines et minéraux. Parfait en salade, smoothie ou chips au four.</p>
+                </div>
+                <div>
+                    <h4>Baies de goji</h4>
+                    <p>Antioxydants puissants qui soutiennent le système immunitaire et la vision.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Exemple de menu équilibré pour une journée</h3>
+        <div>
+            <div>
+                <div>
+                    <h4>Petit-déjeuner</h4>
+                    <p>Bol de yaourt grec avec :</p>
+                    <ul>
+                        <li>• Une poignée de myrtilles fraîches</li>
+                        <li>• 1 cuillère à soupe de graines de chia</li>
+                        <li>• 1 cuillère à café de miel</li>
+                        <li>• Quelques amandes effilées</li>
+                    </ul>
+                    <p>Boisson :</p>
+                    <p>Thé vert ou café sans sucre</p>
+                </div>
+                <div>
+                    <h4>Déjeuner</h4>
+                    <p>Salade complète :</p>
+                    <ul>
+                        <li>• Base de quinoa et légumes verts</li>
+                        <li>• Avocat et tomates cerises</li>
+                        <li>• Poulet grillé ou tofu</li>
+                        <li>• Vinaigrette à l'huile d'olive et citron</li>
+                    </ul>
+                    <p>Dessert :</p>
+                    <p>Une pomme ou une poire</p>
+                </div>
+                <div>
+                    <h4>Dîner</h4>
+                    <p>Plat principal :</p>
+                    <ul>
+                        <li>• Pavé de saumon grillé</li>
+                        <li>• Purée de patate douce</li>
+                        <li>• Légumes verts de saison cuits à la vapeur</li>
+                    </ul>
+                    <p>Collation du soir (optionnelle) :</p>
+                    <p>Infusion de camomille et 2 carrés de chocolat noir</p>
+                </div>
+            </div>
+        </div>
+    </div>
+`,
                 "exercices": `
                     <h3>Conseils d'Exercices</h3>
                     <p>Conseil 1 : Faites au moins 30 minutes d'exercice modéré cinq fois par semaine.<br>
@@ -83,6 +240,8 @@
             window.location.href="login.html"
         }
     </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

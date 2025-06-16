@@ -4,49 +4,118 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background: #e6e6e6d8;
+    background: #ffffff;
 }
 
-header {
+.header-banner {
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+.header-flex {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: #4d0d81;
-    color: white;
- }
+    padding: 16px 0;
+}
+
+.brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #7aa87a;
+}
 /* === Navigation === */
+            .menu-burger {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 25px;
+                cursor: pointer;
+                z-index: 1000;
+            }
 
+            .menu-burger div {
+                width: 30px;
+                height: 3px;
+                background-color: #333;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+            /* Style du menu déroulant */
+            .menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: white;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                z-index: 999;
+            }
+
+            .menu a {
+                text-decoration: none;
+                color: #333;
+                display: block;
+                padding: 10px;
+            }
+
+            .menu a:hover {
+                background-color: #f0f0f0;
+            }
+
+.hero-section {
+    position: relative;
+    background-image: url('https://readdy.ai/api/search-image?query=A%20serene%20natural%20wellness%20scene%20with%20soft%20green%20foliage%2C%20gentle%20sunlight%20filtering%20through%20leaves%2C%20creating%20a%20peaceful%20atmosphere.%20The%20left%20side%20has%20a%20gradient%20transition%20to%20a%20clean%20white%20space%2C%20perfect%20for%20text%20overlay.%20The%20image%20evokes%20feelings%20of%20health%2C%20tranquility%20and%20natural%20wellbeing%2C%20with%20soft%20focus%20and%20harmonious%20colors.&width=1600&height=600&seq=hero123&orientation=landscape');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
 }
-
-nav ul li {
-    display: inline;
-    margin: 0 3px;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
 }
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0 120px 0;
+    max-width: 700px;
+}
+.hero-title {
+    font-size: 2.5rem;
     font-weight: bold;
-    padding: 4px 8px;
-    font-size: 0.85rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    color: var(--white);
+    margin-bottom: 24px;
 }
-
-nav ul li a:hover {
-    background-color: #e0e0e0;
+.hero-desc {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 32px;
 }
-
+.hero-btn {
+    background: #1c1f26;
+    color: #fff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+.hero-btn:hover {
+    background: #7aa87a;
+}
 
 /* === Sections === */
 .section {
@@ -55,7 +124,7 @@ nav ul li a:hover {
 }
 
 .section h2 {
-    color: #83219b;
+    color: #010002;
 }
 
 /* === Grille et Cartes === */
@@ -67,27 +136,53 @@ nav ul li a:hover {
 }
 
 .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+   background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    border: 1px solid #e5e7eb;
 }
 
 .card h3 {
-    color: #540a80;
+    color: #07010a;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
+
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+    border-color: var(--primary);
+}
+.category-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(143,188,143,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 2rem;
 }
 
+.content-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    background: var(--secondary);
+    background: rgba(245,245,220,0.2);
+    padding: 0;
+}
+.content-section.active {
+    max-height: 2000px;
+    padding: 64px 0;
+} n
 /* === Boutons et liens === */
 a {
     text-decoration: none;
@@ -100,7 +195,7 @@ a {
 
 a:hover {
     color: #440a66;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 button {
@@ -122,12 +217,78 @@ button:hover {
 
 /* === Pied de page === */
 footer {
-    background: linear-gradient(to left, #4a0258, #030e11);
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 250px;
+    background-color: #1c1f26;
+    color: #b0b3b8;
+    padding: 20px;
 }
+
+.footer-container {
+    max-width: 1200px;  /* Corrige la largeur maximale */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* Affiche les sections côte à côte */
+    align-items: flex-start;
+    justify-content: space-between; /* Espace entre les sections */
+    flex-wrap: wrap; /* Permet le retour à la ligne si l'espace manque */
+}
+
+.footer-section{
+    margin-bottom: 20px;
+}
+
+.footer-section h3{
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li{
+    margin: 5px 0;
+}
+
+.footer-container ul li a{
+    color: #b0b3b8;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover{
+    text-decoration: underline;
+}
+
+.social-icons{
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a{
+   display: inline-flex; 
+   align-items: center;
+   justify-content: center;
+   width: 40px;
+   height: 40px;
+   background-color: #2c313a;
+   border-radius: 50px;
+   color: #fff;
+   font-size: 18px;
+   text-decoration: none;
+   transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover{
+    background-color: #4a4f59;
+}
+
+.copyright{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
 
 /* === Responsive : Petits écrans (moins de 600px) === */
 @media (max-width: 300px) {

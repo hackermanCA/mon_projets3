@@ -9,18 +9,22 @@
 </head>
 
 <body>
+     <div class="menu-burger" id="menuBurger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Menu déroulant -->
+        <div class="menu" id="menu">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="services.html">Nos services</a>
+            <a href="#" onclick="logout()">Déconnexion</a>
+        </div>
     
         <header class="header-banner">
             <h1>À propos</h1>
-            <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Nos conseils</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" onclick="logout()">Déconnexion</a></li>
-            </ul>
-        </nav>
-
         </header>
 
         <!-- Barre de navigation -->
@@ -28,13 +32,13 @@
 
         <section id="about" class="section">
             <h2>À propos</h2>
-            <p>Notre mission est d'aider chacun à améliorer sa santé grâce à des conseils simples et efficaces.</p>
+            <p>Découvrez des conseils simples et efficacespour améliorer votre bien-être au quotidien.
+                notre approche holistique combine santé,alimentation,remèdes naturels et exercices physiques</p>
         </section>
 
         <!-- Pied de page -->
-        <footer>
-            <p>&copy; Tous droits réservés 2025</p>
-        </footer>
+       
+        
     </div>
 
     <!-- Script pour la déconnexion -->
@@ -44,6 +48,8 @@
             window.location.href = "login.html";
         }
     </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
