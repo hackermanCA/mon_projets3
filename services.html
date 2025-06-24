@@ -71,153 +71,95 @@
 
         <!-- Pied de page -->
         <footer>
-            <div class="footer-container">
-               <div class="footer-section">
-               <h3>catégories</h3>
-               <ul>
-                <li><a href=""></a>santé</li>
-                <li><a href=""></a>Alimentation</li>
-                <li><a href=""></a>Remèdes</li>
-                <li><a href=""></a>Exercices</li>
-               </ul>
-               </div>
-
-               <div class="footer-section">
-                <h3>Liens utiles</h3>
-                <ul>
-                <li><a href="#about"></a>A propos</li>
-                <li><a href="#contact"></a>Contact</li>
-                <li><a href="privacy">Politique de confidentialité</a></li> 
-                <li><a href="term">Mentions légales</a></li>
-                </ul>
-               </div>
-
-               <div class="footer-section">
-                <h3>suivez-nous</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook">F</a>
-                    <a href="#" aria-label="Instagram">I</a>
-                    <a href="#" aria-label="Twitter">X</a>
-                    <a href="#" aria-label="Pinterest">P</a>
+        <div class="container">
+            <div class="footer-main">
+                <div>
+                    <div class="footer-brand">Bien-être</div>
+                    <div>Votre guide pour une vie saine et équilibrée, naturellement.</div>
                 </div>
-               </div>
-
-               <div class="copyright">
-                &copy; 2025 Bien-être Naturel. Tous droits réservés.
-               </div>
+                <div>
+                    <div class="footer-title">Catégories</div>
+                    <ul class="footer-links">
+                        <li><a href="#">Santé</a></li>
+                        <li><a href="#">Alimentation</a></li>
+                        <li><a href="#">Remèdes naturels</a></li>
+                        <li><a href="#">Exercices</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Liens utiles</div>
+                    <ul class="footer-links">
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Suivez-nous</div>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="footer-social-link"><i class="ri-instagram-line"></i></a>
+                        <a href="#" class="footer-social-link"><i class="ri-twitter-x-line"></i></a>
+                        <a href="#" class="footer-social-link"><i class="ri-pinterest-line"></i></a>
+                    </div>
+                </div>
             </div>
-        </footer>
+            <div class="footer-bottom">
+                <p>© 2025 Bien-être Naturel. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Script pour afficher les conseils -->
     <script>
         function loadConseil(service) {
             let conseils = {
                 "alimentation": `
-                    <div>
-        <div>
-            <h3>Nourrissez votre corps intelligemment</h3>
-            <p>Une alimentation équilibrée est la base d'une bonne santé. Voici quelques principes à suivre pour adopter une alimentation saine :</p>
-            <ul>
-                <li>
-                    <div>
-                        <i class="ri-check-line"></i>
-                    </div>
-                    <span>Privilégiez les aliments non transformés et les produits frais</span>
-                </li>
-                <li>
-                    <div>
-                        <i class="ri-check-line"></i>
-                    </div>
-                    <span>Consommez au moins 5 portions de fruits et légumes par jour</span>
-                </li>
-                <li>
-                    <div>
-                        <i class="ri-check-line"></i>
-                    </div>
-                    <span>Limitez votre consommation de sucres ajoutés et de sel</span>
-                </li>
-                <li>
-                    <div>
-                        <i class="ri-check-line"></i>
-                    </div>
-                    <span>Optez pour des graisses saines comme l'huile d'olive, les avocats et les noix</span>
-                </li>
-                <li>
-                    <div>
-                        <i class="ri-check-line"></i>
-                    </div>
-                    <span>Variez les sources de protéines (légumineuses, poissons, volaille)</span>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <img src="${this.image}" alt="Alimentation saine">
-        </div>
-    </div>
-    <div>
-        <h3>Les superaliments à intégrer dans votre alimentation</h3>
-        <div>
-            <div>
-                <div>
-                    <h4>Graines de chia</h4>
-                    <p>Riches en oméga-3, fibres et protéines. Idéales dans les smoothies ou yaourts.</p>
-                </div>
-                <div>
-                    <h4>Curcuma</h4>
-                    <p>Puissant anti-inflammatoire et antioxydant. À ajouter dans vos plats ou en infusion.</p>
-                </div>
-                <div>
-                    <h4>Chou kale</h4>
-                    <p>Concentré de vitamines et minéraux. Parfait en salade, smoothie ou chips au four.</p>
-                </div>
-                <div>
-                    <h4>Baies de goji</h4>
-                    <p>Antioxydants puissants qui soutiennent le système immunitaire et la vision.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <h3>Exemple de menu équilibré pour une journée</h3>
-        <div>
-            <div>
-                <div>
-                    <h4>Petit-déjeuner</h4>
-                    <p>Bol de yaourt grec avec :</p>
-                    <ul>
-                        <li>• Une poignée de myrtilles fraîches</li>
-                        <li>• 1 cuillère à soupe de graines de chia</li>
-                        <li>• 1 cuillère à café de miel</li>
-                        <li>• Quelques amandes effilées</li>
-                    </ul>
-                    <p>Boisson :</p>
-                    <p>Thé vert ou café sans sucre</p>
-                </div>
-                <div>
-                    <h4>Déjeuner</h4>
-                    <p>Salade complète :</p>
-                    <ul>
-                        <li>• Base de quinoa et légumes verts</li>
-                        <li>• Avocat et tomates cerises</li>
-                        <li>• Poulet grillé ou tofu</li>
-                        <li>• Vinaigrette à l'huile d'olive et citron</li>
-                    </ul>
-                    <p>Dessert :</p>
-                    <p>Une pomme ou une poire</p>
-                </div>
-                <div>
-                    <h4>Dîner</h4>
-                    <p>Plat principal :</p>
-                    <ul>
-                        <li>• Pavé de saumon grillé</li>
-                        <li>• Purée de patate douce</li>
-                        <li>• Légumes verts de saison cuits à la vapeur</li>
-                    </ul>
-                    <p>Collation du soir (optionnelle) :</p>
-                    <p>Infusion de camomille et 2 carrés de chocolat noir</p>
-                </div>
-            </div>
-        </div>
+                    <div class="conseil-alimentation">
+        <h3>Nourrissez votre corps intelligemment</h3>
+        <p>Une alimentation équilibrée est la base d'une bonne santé. Voici quelques principes à suivre :</p>
+        <ul>
+            <li><i class="ri-check-line"></i> Privilégiez les aliments non transformés et les produits frais</li>
+            <li><i class="ri-check-line"></i> Consommez au moins 5 portions de fruits et légumes par jour</li>
+            <li><i class="ri-check-line"></i> Limitez votre consommation de sucres ajoutés et de sel</li>
+            <li><i class="ri-check-line"></i> Optez pour des graisses saines comme l'huile d'olive, les avocats et les noix</li>
+            <li><i class="ri-check-line"></i> Variez les sources de protéines (légumineuses, poissons, volaille)</li>
+        </ul>
+
+        <h3>Superaliments à intégrer</h3>
+        <ul>
+            <li><strong>Graines de chia :</strong> riches en oméga-3, fibres et protéines. Idéales dans les smoothies ou yaourts.</li>
+            <li><strong>Curcuma :</strong> puissant anti-inflammatoire et antioxydant. À ajouter dans vos plats ou en infusion.</li>
+            <li><strong>Chou kale :</strong> concentré de vitamines et minéraux. Parfait en salade, smoothie ou chips au four.</li>
+            <li><strong>Baies de goji :</strong> antioxydants puissants qui soutiennent le système immunitaire et la vision.</li>
+        </ul>
+
+        <h3>Exemple de menu équilibré</h3>
+        <ul>
+            <li>
+                <strong>Petit-déjeuner :</strong> 
+                <ul>
+                    <li>Bol de yaourt grec avec myrtilles, graines de chia, miel, amandes effilées</li>
+                    <li>Thé vert ou café sans sucre</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Déjeuner :</strong>
+                <ul>
+                    <li>Salade de quinoa, légumes verts, avocat, tomates cerises, poulet grillé ou tofu</li>
+                    <li>Vinaigrette à l'huile d'olive et citron</li>
+                    <li>Dessert : une pomme ou une poire</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Dîner :</strong>
+                <ul>
+                    <li>Pavé de saumon grillé, purée de patate douce, légumes verts vapeur</li>
+                    <li>Collation du soir (optionnelle) : infusion de camomille et 2 carrés de chocolat noir</li>
+                </ul>
+            </li>
+        </ul>
     </div>
 `,
                 "exercices": `
