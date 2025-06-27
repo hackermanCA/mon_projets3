@@ -35,39 +35,51 @@
         <!-- Barre de navigation -->
     
 
-        <section id="services" class="section">
-            <h2>Nos catégories de bien-être</h2>
-            <p>Explorez nos quatre piliers pour une vie équilibrée et saine. Cliquez sur une catégorie pour découvrir des conseils personalisés.</p>
-            <div class="grid">
-                <div class="card" onclick="loadConseil('alimentation')">
-                      <div class="category-icon">
-                        <i class="ri-apple-line"></i>
-                    </div>
-                    <h3>Alimentation</h3>
-                    <p>Découvrez les aliments qui nourissent votre corps et votre esprit.</p>
+        <section class="section">
+    <div class="container">
+        <div class="section-title">Nos catégories de bien-être</div>
+        <div class="section-desc">Explorez nos quatre piliers pour une vie équilibrée et saine. Cliquez sur une catégorie pour découvrir des conseils personnalisés.</div>
+        <div class="categories-list">
+            <div class="category-card" data-category="sante">
+                <div class="category-icon">
+                    <i class="ri-heart-pulse-line"></i>
                 </div>
-                <div class="card" onclick="loadConseil('exercices')">
-                    <div class="category-icon">
-                        <i class="ri-run-line"></i>
-                    </div>
-                    <h3>Exercices</h3>
-                    <p>activités physiques adaptées à tous les niveaux pour rester en forme.</p>
-                </div>
-                <div class="card" onclick="loadConseil('remedes')">
-                     <div class="category-icon">
-                        <i class="ri-leaf-line"></i>
-                    </div>
-                    <h3>Remèdes naturels</h3>
-                    <p>Solutions naturelles pour soulager les maux du quotidien.</p>
-                </div>
+                <div class="category-title">Santé</div>
+                <div class="category-desc">Conseils pour maintenir une bonne santé physique et mentale.</div>
             </div>
-        </section>
+            <div class="category-card" data-category="alimentation">
+                <div class="category-icon">
+                    <i class="ri-apple-line"></i>
+                </div>
+                <div class="category-title">Alimentation</div>
+                <div class="category-desc">Découvrez les aliments qui nourrissent votre corps et votre esprit.</div>
+            </div>
+            <div class="category-card" data-category="remedes">
+                <div class="category-icon">
+                    <i class="ri-leaf-line"></i>
+                </div>
+                <div class="category-title">Remèdes naturels</div>
+                <div class="category-desc">Solutions naturelles pour soulager les maux du quotidien.</div>
+            </div>
+            <div class="category-card" data-category="exercices">
+                <div class="category-icon">
+                    <i class="ri-run-line"></i>
+                </div>
+                <div class="category-title">Exercices</div>
+                <div class="category-desc">Activités physiques adaptées à tous les niveaux pour rester en forme.</div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Section d'affichage dynamique des conseils -->
-        <section id="conteneur" class="section">
-            <h2>Consultez nos conseils ici</h2>
-            <p>Cliquez sur une carte pour afficher les conseils détaillés.</p>
-        </section>
+       <section id="content-section">
+        <div class="container">
+            <div id="content-container">
+                <!-- Le contenu sera injecté ici dynamiquement -->
+            </div>
+        </div>
+    </section>
 
         <!-- Pied de page -->
         <footer>
@@ -112,78 +124,171 @@
     </footer>
 
     <!-- Script pour afficher les conseils -->
-    <script>
-        function loadConseil(service) {
-            let conseils = {
-                "alimentation": `
-                    <div class="conseil-alimentation">
-        <h3>Nourrissez votre corps intelligemment</h3>
-        <p>Une alimentation équilibrée est la base d'une bonne santé. Voici quelques principes à suivre :</p>
-        <ul>
-            <li><i class="ri-check-line"></i> Privilégiez les aliments non transformés et les produits frais</li>
-            <li><i class="ri-check-line"></i> Consommez au moins 5 portions de fruits et légumes par jour</li>
-            <li><i class="ri-check-line"></i> Limitez votre consommation de sucres ajoutés et de sel</li>
-            <li><i class="ri-check-line"></i> Optez pour des graisses saines comme l'huile d'olive, les avocats et les noix</li>
-            <li><i class="ri-check-line"></i> Variez les sources de protéines (légumineuses, poissons, volaille)</li>
-        </ul>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contentSection = document.getElementById('content-section');
+    const contentContainer = document.getElementById('content-container');
+    const categoryCards = document.querySelectorAll('.category-card');
 
-        <h3>Superaliments à intégrer</h3>
-        <ul>
-            <li><strong>Graines de chia :</strong> riches en oméga-3, fibres et protéines. Idéales dans les smoothies ou yaourts.</li>
-            <li><strong>Curcuma :</strong> puissant anti-inflammatoire et antioxydant. À ajouter dans vos plats ou en infusion.</li>
-            <li><strong>Chou kale :</strong> concentré de vitamines et minéraux. Parfait en salade, smoothie ou chips au four.</li>
-            <li><strong>Baies de goji :</strong> antioxydants puissants qui soutiennent le système immunitaire et la vision.</li>
-        </ul>
-
-        <h3>Exemple de menu équilibré</h3>
-        <ul>
-            <li>
-                <strong>Petit-déjeuner :</strong> 
-                <ul>
-                    <li>Bol de yaourt grec avec myrtilles, graines de chia, miel, amandes effilées</li>
-                    <li>Thé vert ou café sans sucre</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Déjeuner :</strong>
-                <ul>
-                    <li>Salade de quinoa, légumes verts, avocat, tomates cerises, poulet grillé ou tofu</li>
-                    <li>Vinaigrette à l'huile d'olive et citron</li>
-                    <li>Dessert : une pomme ou une poire</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Dîner :</strong>
-                <ul>
-                    <li>Pavé de saumon grillé, purée de patate douce, légumes verts vapeur</li>
-                    <li>Collation du soir (optionnelle) : infusion de camomille et 2 carrés de chocolat noir</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-`,
-                "exercices": `
-                    <h3>Conseils d'Exercices</h3>
-                    <p>Conseil 1 : Faites au moins 30 minutes d'exercice modéré cinq fois par semaine.<br>
-                    Conseil 2 : Incluez des exercices de renforcement musculaire au moins deux fois par semaine.<br>
-                    Conseil 3 : Essayez des activités variées pour éviter l'ennui et travailler différents groupes musculaires.</p>`,
-                "remedes": `
-                    <h3>Remèdes Naturels</h3>
-                    <p>Conseil 1 : Utilisez du miel et du citron pour apaiser les maux de gorge.<br>
-                    Conseil 2 : La camomille peut aider à calmer les nerfs et améliorer le sommeil.<br>
-                    Conseil 3 : Le gingembre est excellent pour combattre les nausées et faciliter la digestion.</p>`
-            };
-            document.getElementById("conteneur").innerHTML = conseils[service];
-            document.getElementById("conteneur").scrollIntoView({ behavior: "smooth" });
+    // Les contenus doivent être définis dans chaque page, mais la structure du script reste la même
+    // Exemple d'objet categoryContent (à adapter selon tes besoins)
+    const categoryContent = {
+        sante: {
+            title: 'Conseils Santé',
+            content: `
+                <div class="grid">
+                    <div class="card">
+                        <h3>Maintenez une bonne santé physique et mentale</h3>
+                        <p>Découvrez des conseils pratiques pour améliorer votre bien-être général :</p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Faites des bilans de santé réguliers</li>
+                            <li><i class="ri-check-line"></i> Pratiquez une activité physique modérée au moins 150 minutes par semaine</li>
+                            <li><i class="ri-check-line"></i> Dormez suffisamment, 7 à 9 heures par nuit</li>
+                            <li><i class="ri-check-line"></i> Gérez votre stress par des techniques de relaxation</li>
+                            <li><i class="ri-check-line"></i> Restez hydraté et adoptez une alimentation équilibrée</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Prévention et dépistage</h3>
+                        <p>Informez-vous sur les examens de santé recommandés selon votre âge et votre sexe.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ressources utiles</h3>
+                        <ul>
+                            <li><a href="#">Ameli.fr</a> - Assurance Maladie</li>
+                            <li><a href="#">Santé publique France</a> - Informations et conseils</li>
+                            <li><a href="#">Doctolib</a> - Prendre rendez-vous avec un professionnel de santé</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        },
+        alimentation: {
+            title: 'Conseils Alimentation',
+            content: `
+                <div class="grid">
+                    <div class="card">
+                        <h3>Nourrissez votre corps intelligemment</h3>
+                        <p>Une alimentation équilibrée est la base d'une bonne santé. Voici quelques principes à suivre :</p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Privilégiez les aliments non transformés et les produits frais</li>
+                            <li><i class="ri-check-line"></i> Consommez au moins 5 portions de fruits et légumes par jour</li>
+                            <li><i class="ri-check-line"></i> Limitez votre consommation de sucres ajoutés et de sel</li>
+                            <li><i class="ri-check-line"></i> Optez pour des graisses saines comme l'huile d'olive, les avocats et les noix</li>
+                            <li><i class="ri-check-line"></i> Variez les sources de protéines (légumineuses, poissons, volaille)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Superaliments à intégrer</h3>
+                        <ul>
+                            <li><strong>Graines de chia :</strong> riches en oméga-3, fibres et protéines. Idéales dans les smoothies ou yaourts.</li>
+                            <li><strong>Curcuma :</strong> puissant anti-inflammatoire et antioxydant. À ajouter dans vos plats ou en infusion.</li>
+                            <li><strong>Chou kale :</strong> concentré de vitamines et minéraux. Parfait en salade, smoothie ou chips au four.</li>
+                            <li><strong>Baies de goji :</strong> antioxydants puissants qui soutiennent le système immunitaire et la vision.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Exemple de menu équilibré</h3>
+                        <ul>
+                            <li>
+                                <strong>Petit-déjeuner :</strong> 
+                                <ul>
+                                    <li>Bol de yaourt grec avec myrtilles, graines de chia, miel, amandes effilées</li>
+                                    <li>Thé vert ou café sans sucre</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Déjeuner :</strong>
+                                <ul>
+                                    <li>Salade de quinoa, légumes verts, avocat, tomates cerises, poulet grillé ou tofu</li>
+                                    <li>Vinaigrette à l'huile d'olive et citron</li>
+                                    <li>Dessert : une pomme ou une poire</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Dîner :</strong>
+                                <ul>
+                                    <li>Pavé de saumon grillé, purée de patate douce, légumes verts vapeur</li>
+                                    <li>Collation du soir (optionnelle) : infusion de camomille et 2 carrés de chocolat noir</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        },
+        remedes: {
+            title: 'Remèdes naturels',
+            content: `
+                <div class="grid">
+                    <div class="card">
+                        <h3>Apprenez à soulager les maux courants</h3>
+                        <p>Des solutions naturelles pour vous sentir mieux au quotidien :</p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Utilisez le miel pour apaiser la toux et les maux de gorge</li>
+                            <li><i class="ri-check-line"></i> Essayez le gingembre pour ses propriétés anti-inflammatoires</li>
+                            <li><i class="ri-check-line"></i> La menthe poivrée peut aider à soulager les maux de tête</li>
+                            <li><i class="ri-check-line"></i> Le thé à la camomille est idéal pour la digestion et le sommeil</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Préparez vos remèdes maison</h3>
+                        <p>Quelques recettes simples à base d'ingrédients naturels :</p>
+                        <ul>
+                            <li><strong>Infusion détox :</strong> Thé vert, citron, gingembre, miel</li>
+                            <li><strong>Sirop contre la toux :</strong> Miel, citron, eau chaude</li>
+                            <li><strong>Cataplasme apaisant :</strong> Flocons d'avoine, miel, eau</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        },
+        exercices: {
+            title: 'Exercices pour tous',
+            content: `
+                <div class="grid">
+                    <div class="card">
+                        <h3>Restez actif à votre rythme</h3>
+                        <p>Des conseils pour intégrer l'exercice dans votre vie quotidienne :</p>
+                        <ul>
+                            <li><i class="ri-check-line"></i> Marchez au moins 30 minutes par jour</li>
+                            <li><i class="ri-check-line"></i> Prenez les escaliers au lieu de l'ascenseur</li>
+                            <li><i class="ri-check-line"></i> Faites des pauses actives si vous travaillez longtemps assis</li>
+                            <li><i class="ri-check-line"></i> Essayez le yoga ou le tai-chi pour la flexibilité et la détente</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Programmes d'exercices recommandés</h3>
+                        <p>Des idées d'activités physiques selon vos préférences :</p>
+                        <ul>
+                            <li><strong>Cardio :</strong> Course à pied, vélo, natation, danse</li>
+                            <li><strong>Renforcement musculaire :</strong> Haltères, élastiques, poids du corps</li>
+                            <li><strong>Flexibilité :</strong> Étirements, yoga, Pilates</li>
+                        </ul>
+                    </div>
+                </div>
+            `
         }
+    };
 
-        function logout() {
-            localStorage.removeItem("isLoggedIn")
-            window.location.href="login.html"
-        }
-    </script>
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            const content = categoryContent[category];
 
-    <script src="script.js"></script>
+            if (content) {
+                contentContainer.innerHTML = `
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">${content.title}</h2>
+                    ${content.content}
+                `;
+                contentSection.classList.add('active');
+                setTimeout(() => {
+                    contentSection.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        });
+    });
+});
+</script>
 </body>
-
 </html>

@@ -56,5 +56,64 @@
         }
     }
   </script>
+
+  <style>
+    /* Cartes de catégories identiques */
+    .categories-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 32px;
+    }
+    @media (min-width: 768px) {
+        .categories-list {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @media (min-width: 1024px) {
+        .categories-list {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    .category-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 16px;
+        border: 1px solid #e5e7eb;
+    }
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+        border-color: #8FBC8F;
+    }
+    .category-icon {
+        width: 64px;
+        height: 64px;
+        background: rgba(143,188,143,0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        font-size: 2rem;
+    }
+    .category-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 8px;
+    }
+    .category-desc {
+        color: #4b5563;
+        text-align: center;
+    }
+  </style>
 </body>
 </html>
