@@ -132,18 +132,18 @@ body {
 /* SECTION GENERIQUE */
 .section {
     padding: 64px 0;
-    background: var(--white);
+    background: #ffffff
 }
 .section-title {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    color: var(--gray-800);
+    color: #1f2937;
     margin-bottom: 16px;
 }
 .section-desc {
     text-align: center;
-    color: var(--gray-600);
+    color: #4b5563;
     max-width: 600px;
     margin: 0 auto 48px auto;
 }
