@@ -128,14 +128,24 @@ body {
     padding: 64px 0;
 }
  
-/* === Sections === */
-.section {
-    padding: 20px;
-    text-align: center;
-}
 
-.section h2 {
-    color: #010002;
+/* SECTION GENERIQUE */
+.section {
+    padding: 64px 0;
+    background: var(--white);
+}
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--gray-800);
+    margin-bottom: 16px;
+}
+.section-desc {
+    text-align: center;
+    color: var(--gray-600);
+    max-width: 600px;
+    margin: 0 auto 48px auto;
 }
 
 /* === Grille et Cartes === */
