@@ -106,13 +106,55 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Responsive for mobile */
+/* Responsive améliorée pour mobile et tablette */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  .form-section, .welcome-section {
+    padding: 24px;
+  }
+}
 @media (max-width: 768px) {
   .login-box {
     flex-direction: column;
+    border-radius: 12px;
   }
-
+  .form-section {
+    padding: 18px;
+  }
   .welcome-section {
     display: none;
+  }
+  .container {
+    width: 98vw;
+    min-width: 0;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .input-group input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+}
+@media (max-width: 480px) {
+  .form-section {
+    padding: 8px;
+  }
+  .container {
+    padding: 0;
+  }
+  .form-section h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .links {
+    font-size: 12px;
   }
 }
