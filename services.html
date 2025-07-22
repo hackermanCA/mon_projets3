@@ -291,5 +291,11 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 </script>
 <script src="script.js"></script>
+<script>
+    function logout() {
+        localStorage.removeItem("isLoggedIn")
+        window.location.href="login.html"
+    }
+    </script>
 </body>
 </html>
