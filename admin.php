@@ -1,3 +1,17 @@
+<?php
+require_once 'config.php';
+requireLogin();
+
+// Charger les statistiques depuis un fichier JSON
+$statsFile = __DIR__ . '/stats.json';
+$stats = file_exists($statsFile) ? json_decode(file_get_contents($statsFile), true) : [
+    'visitors' => 0,
+    'sante' => 0,
+    'alimentation' => 0,
+    'remedes' => 0,
+    'exercices' => 0
+];
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,13 +41,15 @@
         </div>
         <table class="stats-table">
             <tr><th>Statistique</th><th>Valeur</th></tr>
-            <tr><td>Nombre total de visiteurs</td><td id="visitorsCount">0</td></tr>
-            <tr><td>Nombre de consultations Santé</td><td id="santeCount">0</td></tr>
-            <tr><td>Nombre de consultations Alimentation</td><td id="alimentationCount">0</td></tr>
-            <tr><td>Nombre de consultations Remèdes</td><td id="remedesCount">0</td></tr>
-            <tr><td>Nombre de consultations Exercices</td><td id="exercicesCount">0</td></tr>
+            <tr><td>Nombre total de visiteurs</td><td id="visitorsCount"><?php echo $stats['visitors']; ?></td></tr>
+            <tr><td>Nombre de consultations Santé</td><td id="santeCount"><?php echo $stats['sante']; ?></td></tr>
+            <tr><td>Nombre de consultations Alimentation</td><td id="alimentationCount"><?php echo $stats['alimentation']; ?></td></tr>
+            <tr><td>Nombre de consultations Remèdes</td><td id="remedesCount"><?php echo $stats['remedes']; ?></td></tr>
+            <tr><td>Nombre de consultations Exercices</td><td id="exercicesCount"><?php echo $stats['exercices']; ?></td></tr>
         </table>
         <button onclick="resetStats()">Réinitialiser les statistiques</button>
+        <br><br>
+        <a href="index.php">Retour à l'accueil</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="admin.js"></script>

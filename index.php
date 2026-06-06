@@ -1,3 +1,7 @@
+<?php
+require_once 'config.php';
+requireLogin();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,19 +23,17 @@
 
         <!-- Menu déroulant -->
         <div class="menu" id="menu">
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="services.html">Nos services</a>
-            <a href="#" onclick="logout()">Déconnexion</a>
+            <a href="index.php">Accueil</a>
+            <a href="about.php">À propos</a>
+            <a href="services.php">Nos services</a>
+            <?php if (isAdmin()): ?>
+                <a href="admin.php">Administration</a>
+            <?php endif; ?>
+            <a href="logout.php">Déconnexion</a>
         </div>
-    
-    <script>
-        if (!localStorage.getItem("isLoggedIn")) {
-            window.location.href = "login.html";
-        }
-    </script>    
-    
-    
+
+
+
     <header class="header-banner">
         <div class="container header-flex">
             <div>
@@ -48,20 +50,11 @@
         <div class="container hero-content">
             <h1 class="hero-title">Prenez soin de vous naturellement</h1>
             <p class="hero-desc">Découvrez des conseils simples et efficaces pour améliorer votre bien-être au quotidien. Notre approche holistique combine santé, alimentation, remèdes naturels et exercices physiques.</p>
-             <button class="hero-btn" onclick="window.location.href='services.html'">Commencer maintenant</button>
+             <button class="hero-btn" onclick="window.location.href='services.php'">Commencer maintenant</button>
         </div>
     </section>
-
-    <!-- Script pour la déconnexion -->
-    <script>
-        function logout() {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
-        }
-    </script>
 
     <script src="script.js"></script>
 </body>
 
 </html>
-    

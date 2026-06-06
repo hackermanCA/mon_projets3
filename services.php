@@ -1,3 +1,7 @@
+<?php
+require_once 'config.php';
+requireLogin();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,10 +22,13 @@
 
         <!-- Menu déroulant -->
         <div class="menu" id="menu">
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="services.html">Nos services</a>
-            <a href="#" onclick="logout()">Déconnexion</a>
+            <a href="index.php">Accueil</a>
+            <a href="about.php">À propos</a>
+            <a href="services.php">Nos services</a>
+            <?php if (isAdmin()): ?>
+                <a href="admin.php">Administration</a>
+            <?php endif; ?>
+            <a href="logout.php">Déconnexion</a>
         </div>
 
          <header class="header-banner">
@@ -33,7 +40,7 @@
     </header>
 
         <!-- Barre de navigation -->
-    
+
 
         <section class="section">
     <div class="container">
@@ -182,36 +189,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>Superaliments à intégrer</h3>
                         <ul>
                             <li><strong>Graines de chia :</strong> riches en oméga-3, fibres et protéines. Idéales dans les smoothies ou yaourts.</li>
-                            <li><strong>Curcuma :</strong> puissant anti-inflammatoire et antioxydant. À ajouter dans vos plats ou en infusion.</li>
-                            <li><strong>Chou kale :</strong> concentré de vitamines et minéraux. Parfait en salade, smoothie ou chips au four.</li>
-                            <li><strong>Baies de goji :</strong> antioxydants puissants qui soutiennent le système immunitaire et la vision.</li>
+                            <li><strong>Baies de goji :</strong> antioxydants puissants, vitamines et minéraux. À consommer séchées ou en infusion.</li>
+                            <li><strong>Quinoa :</strong> protéine complète végétale, riche en fibres et en nutriments essentiels.</li>
+                            <li><strong>Kale (chou frisé) :</strong> extrêmement riche en vitamines A, C et K, calcium et antioxydants.</li>
                         </ul>
                     </div>
                     <div class="card">
                         <h3>Exemple de menu équilibré</h3>
                         <ul>
-                            <li>
-                                <strong>Petit-déjeuner :</strong> 
-                                <ul>
-                                    <li>Bol de yaourt grec avec myrtilles, graines de chia, miel, amandes effilées</li>
-                                    <li>Thé vert ou café sans sucre</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>Déjeuner :</strong>
-                                <ul>
-                                    <li>Salade de quinoa, légumes verts, avocat, tomates cerises, poulet grillé ou tofu</li>
-                                    <li>Vinaigrette à l'huile d'olive et citron</li>
-                                    <li>Dessert : une pomme ou une poire</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>Dîner :</strong>
-                                <ul>
-                                    <li>Pavé de saumon grillé, purée de patate douce, légumes verts vapeur</li>
-                                    <li>Collation du soir (optionnelle) : infusion de camomille et 2 carrés de chocolat noir</li>
-                                </ul>
-                            </li>
+                            <li><strong>Petit-déjeuner :</strong> flocons d'avoine avec fruits frais, noix et graines, thé vert ou infusion.</li>
+                            <li><strong>Déjeuner :</strong> salade composée avec légumes variés, protéines (poisson, légumineuses), huile d'olive.</li>
+                            <li><strong>Collation :</strong> fruit frais ou yaourt nature avec une poignée de noix.</li>
+                            <li><strong>Dîner :</strong> légumes vapeur, céréales complètes, protéines maigres, tisane relaxante.</li>
                         </ul>
                     </div>
                 </div>
@@ -225,19 +214,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>Apprenez à soulager les maux courants</h3>
                         <p>Des solutions naturelles pour vous sentir mieux au quotidien :</p>
                         <ul>
-                            <li><i class="ri-check-line"></i> Utilisez le miel pour apaiser la toux et les maux de gorge</li>
-                            <li><i class="ri-check-line"></i> Essayez le gingembre pour ses propriétés anti-inflammatoires</li>
-                            <li><i class="ri-check-line"></i> La menthe poivrée peut aider à soulager les maux de tête</li>
-                            <li><i class="ri-check-line"></i> Le thé à la camomille est idéal pour la digestion et le sommeil</li>
+                            <li><i class="ri-check-line"></i> <strong>Maux de tête :</strong> appliquez une compresse froide sur le front, reposez-vous dans le noir</li>
+                            <li><i class="ri-check-line"></i> <strong>Indigestion :</strong> buvez du thé à la menthe ou du gingembre, évitez les repas lourds</li>
+                            <li><i class="ri-check-line"></i> <strong>Toux :</strong> miel et citron chaud, inhalation de vapeur avec eucalyptus</li>
+                            <li><i class="ri-check-line"></i> <strong>Insomnie :</strong> tisane de camomille, bain chaud avant le coucher, relaxation</li>
                         </ul>
                     </div>
                     <div class="card">
                         <h3>Préparez vos remèdes maison</h3>
                         <p>Quelques recettes simples à base d'ingrédients naturels :</p>
                         <ul>
-                            <li><strong>Infusion détox :</strong> Thé vert, citron, gingembre, miel</li>
-                            <li><strong>Sirop contre la toux :</strong> Miel, citron, eau chaude</li>
-                            <li><strong>Cataplasme apaisant :</strong> Flocons d'avoine, miel, eau</li>
+                            <li><strong>Sirop contre la toux :</strong> miel, citron, gingembre frais râpé. À prendre par cuillère.</li>
+                            <li><strong>Tisane digestive :</strong> mélange de menthe, fenouil et camomille. Infuser 10 minutes.</li>
+                            <li><strong>Huile essentielle relaxante :</strong> diluez quelques gouttes de lavande dans une huile végétale.</li>
+                            <li><strong>Cataplasme au chou :</strong> feuilles de chou écrasées pour soulager les inflammations.</li>
                         </ul>
                     </div>
                 </div>
@@ -251,19 +241,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>Restez actif à votre rythme</h3>
                         <p>Des conseils pour intégrer l'exercice dans votre vie quotidienne :</p>
                         <ul>
-                            <li><i class="ri-check-line"></i> Marchez au moins 30 minutes par jour</li>
-                            <li><i class="ri-check-line"></i> Prenez les escaliers au lieu de l'ascenseur</li>
-                            <li><i class="ri-check-line"></i> Faites des pauses actives si vous travaillez longtemps assis</li>
-                            <li><i class="ri-check-line"></i> Essayez le yoga ou le tai-chi pour la flexibilité et la détente</li>
+                            <li><i class="ri-check-line"></i> Commencez par des activités que vous aimez pour rester motivé</li>
+                            <li><i class="ri-check-line"></i> Alternez entre exercices cardiovasculaires et musculation</li>
+                            <li><i class="ri-check-line"></i> Pratiquez la marche quotidienne, même 20-30 minutes</li>
+                            <li><i class="ri-check-line"></i> Intégrez des étirements dans votre routine matinale</li>
+                            <li><i class="ri-check-line"></i> Consultez un professionnel si vous avez des problèmes de santé</li>
                         </ul>
                     </div>
                     <div class="card">
                         <h3>Programmes d'exercices recommandés</h3>
                         <p>Des idées d'activités physiques selon vos préférences :</p>
                         <ul>
-                            <li><strong>Cardio :</strong> Course à pied, vélo, natation, danse</li>
-                            <li><strong>Renforcement musculaire :</strong> Haltères, élastiques, poids du corps</li>
-                            <li><strong>Flexibilité :</strong> Étirements, yoga, Pilates</li>
+                            <li><strong>Marche nordique :</strong> excellente pour le cardio et les articulations</li>
+                            <li><strong>Yoga :</strong> améliore la souplesse, réduit le stress, fortifie les muscles profonds</li>
+                            <li><strong>Natation :</strong> activité complète, peu traumatisante pour les articulations</li>
+                            <li><strong>Danse :</strong> fun et efficace pour brûler des calories tout en s'amusant</li>
                         </ul>
                     </div>
                 </div>
@@ -285,17 +277,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     contentSection.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
+
+                // Mettre à jour les statistiques
+                fetch('update_stats.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'category=' + encodeURIComponent(category)
+                });
             }
         });
     });
 })
 </script>
-<script src="script.js"></script>
-<script>
-    function logout() {
-        localStorage.removeItem("isLoggedIn")
-        window.location.href="login.html"
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

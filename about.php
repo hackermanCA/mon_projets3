@@ -1,3 +1,7 @@
+<?php
+require_once 'config.php';
+requireLogin();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,18 +21,21 @@
 
         <!-- Menu déroulant -->
         <div class="menu" id="menu">
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="services.html">Nos services</a>
-            <a href="#" onclick="logout()">Déconnexion</a>
+            <a href="index.php">Accueil</a>
+            <a href="about.php">À propos</a>
+            <a href="services.php">Nos services</a>
+            <?php if (isAdmin()): ?>
+                <a href="admin.php">Administration</a>
+            <?php endif; ?>
+            <a href="logout.php">Déconnexion</a>
         </div>
-    
+
          <header class="header-banner">
         <div class="container header-flex">
             <div class="flex items-center">
                 <h1 class="brand">À propos</h1>
             </div>
-           
+
             <div class="menu-icon">
                 <i class="ri-menu-line text-gray-700 ri-xl"></i>
             </div>
@@ -36,7 +43,7 @@
     </header>
 
         <!-- Barre de navigation -->
-        
+
 
         <section id="about" class="section">
             <h2>À propos</h2>
@@ -50,24 +57,16 @@
                 <li><strong>Remèdes naturels :</strong> Solutions douces pour les petits maux du quotidien.</li>
                 <li><strong>Exercices :</strong> Activités physiques adaptées à tous les niveaux pour rester en forme.</li>
             </ul>
-            <p>Notre équipe est animée par la volonté de rendre le bien-être accessible à tous, dans le respect de la diversité et de l’écoute de chacun. Nous croyons que chaque petit geste compte pour améliorer sa qualité de vie.</p>
+            <p>Notre équipe est animée par la volonté de rendre le bien-être accessible à tous, dans le respect de la diversité et de l'écoute de chacun. Nous croyons que chaque petit geste compte pour améliorer sa qualité de vie.</p>
 
             <h2>Notre objectif</h2>
             <p>Notre objectif est d'aider les personnes en leur donnant des conseils gratuits sur le bien-être, pour qu'elles puissent prendre soin d'elles-mêmes au quotidien, à leur rythme et selon leurs besoins.</p>
         </section>
 
         <!-- Pied de page -->
-       
-        
-    </div>
 
-    <!-- Script pour la déconnexion -->
-    <script>
-        function logout() {
-            localStorage.removeItem("isLoggedIn");
-            window.location.href = "login.html";
-        }
-    </script>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
